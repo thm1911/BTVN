@@ -2,7 +2,7 @@ import java.util.ArrayList;
 import java.util.Scanner;
  public class Khach {
     Scanner sc = new Scanner(System.in);
-     public void timKiemSach(ArrayList<Sach> thuVien){
+     private void timKiemSach(ArrayList<Sach> thuVien){
          System.out.print("Nhập thông tin của sách: ");
          String x = sc.nextLine();
          int cnt = 0;
@@ -18,7 +18,7 @@ import java.util.Scanner;
          }
          if(cnt == 0) System.out.println("Không thấy sách");
      }
-     public void xemDS(ArrayList<Sach> thuVien){
+     private void xemDS(ArrayList<Sach> thuVien){
          if(thuVien.size() == 0) System.out.println("Thư viện không có sách");
          else{
              for(int i = 0; i < thuVien.size(); i++){
