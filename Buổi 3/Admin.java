@@ -5,7 +5,7 @@ import java.util.Scanner;
 
 public class Admin {
     Scanner sc = new Scanner(System.in);
-    public void themSach(ArrayList<Sach> thuVien){
+    private void themSach(ArrayList<Sach> thuVien){
         System.out.print("Tên sách: ");
         String tieuDe = sc.nextLine();
         System.out.print("Tác giả: ");
@@ -18,7 +18,7 @@ public class Admin {
         thuVien.add(sachMoi);
         System.out.println("Đã thêm sách");
     }
-    public void xoaSach(ArrayList<Sach> thuVien){
+    private void xoaSach(ArrayList<Sach> thuVien){
         System.out.print("Nhập vị trí sách muốn xóa: ");
         int id = sc.nextInt();
         if(id < thuVien.size()){
@@ -27,7 +27,7 @@ public class Admin {
         }
         else System.out.println("Không thấy sách");
     }
-    public void capNhatSach(ArrayList<Sach> thuVien){
+    private void capNhatSach(ArrayList<Sach> thuVien){
         System.out.print("Nhập vị trí sách cần sửa: ");
         int id = sc.nextInt();
         sc.nextLine();
@@ -48,12 +48,12 @@ public class Admin {
         }
         else System.out.println("Không thấy sách");
     }
-    public void timKiemSach(ArrayList<Sach> thuVien){
+    private void timKiemSach(ArrayList<Sach> thuVien){
         System.out.print("Nhập thông tin của sách: ");
-        String x = sc.nextLine();
+        String key = sc.nextLine();
         int cnt = 0;
         for(int i = 0; i < thuVien.size() ; i++){
-            if(thuVien.get(i).soSanh(x)){
+            if(thuVien.get(i).soSanh(key)){
                 cnt=1;
                 System.out.println(thuVien.get(i).getTieuDe());
                 System.out.println(thuVien.get(i).getTacGia());
@@ -64,7 +64,7 @@ public class Admin {
         }
         if(cnt == 0) System.out.println("Không thấy sách");
     }
-    public void xemDS(ArrayList<Sach> thuVien){
+    private void xemDS(ArrayList<Sach> thuVien){
         if(thuVien.size() == 0) System.out.println("Thư viện không có sách");
         else{
             for(int i = 0; i < thuVien.size(); i++){
@@ -76,7 +76,7 @@ public class Admin {
             }
         }
     }
-    public void chucNangAdmin(ArrayList<Sach> thuVien){
+    private void chucNangAdmin(ArrayList<Sach> thuVien){
         System.out.println("Chức năng của admin: ");
         System.out.println("1. Thêm sách.");
         System.out.println("2. Xóa sách.");
